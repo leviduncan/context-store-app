@@ -11,6 +11,8 @@ import ervo4 from './assets/ervo-rocks-headphones-v4.jpg'
 import ervo2 from './assets/ervo-rocks-headphones-v2.jpg'
 import veebuds from './assets/vee-buds.jpg'
 import psp from './assets/playstation.jpg'
+import xbox from './assets/xbox-game-controller-v2.jpg'
+import xbox1 from './assets/xbox-game-controller-v1.jpg'
 
 const data = [
     {
@@ -156,6 +158,30 @@ const data = [
         text: 'Sony Playstation Portable (PSP) 2000 Series Handheld Gaming Console System (Pearl Baby Blue). The product is refurbished, fully functional, and in excellent condition. Backed by the 90-day Amazon Renewed Guarantee.',
         img:psp,
         keywords: 'plastation, gaming, games, sony psp, psp, gamepad, sony, wi-fi',
+    },
+    {
+        id: uuid(),
+        name: 'XBOX Wireless Controller Black',
+        price: 28.00,
+        sale: 6,
+        qty: 20,
+        color: 'Black',
+        stars: 3,
+        text: 'XBOX Wireless Controller for Xbox 360, 2.4GHz Enhanced Dual Vibration Game Controller with Receiver Remote Gamepad Joypad Joystick for Xbox 360 Slim PS3 and PC Windows 7/8/10',
+        img: xbox1,
+        keywords: 'blacj, xbox, gaming, games, gamepad, microsoft, wi-fi, game, controller, wireless, joypad, joystick',
+    },
+    {
+        id: uuid(),
+        name: 'XBOX Wireless Controller',
+        price: 18.00,
+        sale: 6,
+        qty: 20,
+        color: 'White',
+        stars: 3,
+        text: 'XBOX Wireless Controller for Xbox 360, 2.4GHz Enhanced Dual Vibration Game Controller with Receiver Remote Gamepad Joypad Joystick for Xbox 360 Slim PS3 and PC Windows 7/8/10',
+        img: xbox,
+        keywords: 'xbox, gaming, games, gamepad, microsoft, wi-fi, game, controller, wireless, joypad, joystick',
     },
 ]
 
