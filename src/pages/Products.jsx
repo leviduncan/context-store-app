@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Categories from '../components/Categories'
 import AppContext from '../context/store'
 
 export const Products = () => {
@@ -10,6 +11,7 @@ export const Products = () => {
       <div className="row">
         <h1>Products</h1>
       </div>
+      <div className="categories-section"><Categories /></div>
       <div className="prod-grid">
         {
         products.map((item) => (

@@ -23,6 +23,7 @@
   border: unset;
   background: #fff;
   box-shadow: 0 0 16px rgba(61, 126, 255, 0.224);
+  margin: 10px 0;
 }
 
 .card-img-top {
@@ -49,4 +50,8 @@
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
 
+}
+
+.categories-section {
+  margin: 20px 0;
 }
