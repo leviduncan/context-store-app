@@ -13,7 +13,7 @@
 
 .prod-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   flex-wrap: wrap;
 }
 
@@ -23,7 +23,7 @@
   border: unset;
   background: #fff;
   box-shadow: 0 0 16px rgba(61, 126, 255, 0.224);
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .card-img-top {
@@ -54,4 +54,77 @@
 
 .categories-section {
   margin: 20px 0;
+}
+
+.categories-section .cameras,
+.categories-section .computers,
+.categories-section .earbuds,
+.categories-section .gaming,
+.categories-section .headphones,
+.categories-section .speakers,
+.categories-section .watches,
+.categories-section .all {
+  background-size: cover;
+  height: 100px;
+  width: 150px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.categories-section .cameras:hover,
+.categories-section .computers:hover,
+.categories-section .earbuds:hover,
+.categories-section .gaming:hover,
+.categories-section .headphones:hover,
+.categories-section .speakers:hover,
+.categories-section .watches:hover,
+.categories-section .all:hover   {
+  box-shadow: 0 0 16px rgba(61, 126, 255, 0.224);
+  margin: 7px 10px 13px;
+}
+
+.categories-section .cameras {
+  background-image: url('./assets/nikon-camera-v2.jpg');
+}
+
+.categories-section .computers {
+  background-image: url('./assets/laptop-v1.jpg');
+}
+.categories-section .earbuds {
+  background-image: url('./assets/loot-airbuds.jpg');
+}
+.categories-section .gaming {
+  background-image: url('./assets/xbox-game-controller-v1.jpg');
+}
+.categories-section .headphones {
+  background-image: url('./assets/ervo-rocks-headphones-v1.jpg');
+}
+.categories-section .speakers {
+  background-image: url('./assets/harmon-kardon-speakers.jpg');
+}
+.categories-section .watches {
+  background-image: url('./assets/nayris-android watch.jpg');
+}
+.categories-section .all {
+  background: rgb(255,0,179);
+  background: linear-gradient(324deg, rgba(255,0,179,1) 0%, rgba(0,255,229,1) 100%);
+}
+
+.search {
+  margin: 16px;
+  color: #ccc;
+}
+
+.form-control input, .form-control input:focus, .form-control input:active, .form-control input:focus-visible {
+  border: unset;
+  width: 100%;
+}
+
+.form-control input:focus-visible {
+  outline: unset;
 }
