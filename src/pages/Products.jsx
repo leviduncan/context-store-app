@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Categories from '../components/Categories'
 import Search from '../components/Search'
 import AppContext from '../context/store'
+import Favs from '../components/Favs'
 
 export const Products = () => {
   const { products } = useContext(AppContext)
@@ -36,8 +38,9 @@ export const Products = () => {
           <div key={item.id} className="card" style={{width: '18rem'}}>
             <img src={item.img} alt="" className="card-img-top" />
             <div className="card-body">
-              <h5 className="card-title">{item.name}</h5>
+              <h5 className="card-title"><Link to={`/product/${item.id}`} >{item.name}</Link></h5>
               <div className="card-text">{item.text}</div>
+              <Favs />
             </div>
           </div>
         ))

@@ -11,14 +11,15 @@ import data from './data'
 function App() {
   const [cart, setCart] = useState([])
   const [products, setProducts] = useState(data)
+  const [favs, setFavs] = useState(false)
 
   return (
-    <AppContext.Provider value={{ cart, setCart, products, setProducts }}>
+    <AppContext.Provider value={{ cart, setCart, products, setProducts, favs, setFavs }}>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/product/:id" element={<Product />} />
         </Routes>
       </Router>
     </AppContext.Provider>

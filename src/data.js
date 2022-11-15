@@ -13,6 +13,8 @@ import veebuds from './assets/vee-buds.jpg'
 import psp from './assets/playstation.jpg'
 import xbox from './assets/xbox-game-controller-v2.jpg'
 import xbox1 from './assets/xbox-game-controller-v1.jpg'
+import pcmouse from  './assets/nayris-computer-mouse.jpg'
+import kody from './assets/kody-headphones-v1.jpg'
 
 const data = [
     {
@@ -25,7 +27,7 @@ const data = [
         stars: 4,
         text: 'RORSOU R10 On-Ear Headphones with Microphone, Lightweight Folding Stereo Bass Headphones with 1.5M No-Tangle Cord, Portable Wired Headphones for Smartphone Tablet Computer MP3 / 4',
         img: aedle,
-        keywords: 'headphones, brown, silver, on-ear, wired, smartphone, tablet, computer, cord',
+        keywords: 'headphones, brown, silver, on-ear, wired, smartphone, tablet, computers, cord',
     },
     {
         id: uuid(),
@@ -49,7 +51,7 @@ const data = [
         stars: 5,
         text: 'Harman Kardon Onyx Studio 4 Wireless Bluetooth Speaker Black (New Model, 100',
         img: harman,
-        keywords: 'speaker, speakers, bluetooth, black, harmon kardon, wireless',
+        keywords: 'speaker, speakers, bluetooth, black, harmon kardon, wireless, computers',
     },
     {
         id: uuid(),
@@ -61,7 +63,7 @@ const data = [
         stars: 4,
         text: 'LORELEI X6 Over-Ear Headphones with Microphone, Lightweight Foldable & Portable Stereo Bass Headphones with 1.45M No-Tangle, Wired Headphones for Smartphone Tablet MP3 / 4',
         img: ervo4,
-        keywords: 'over, over ear, headphones, lightblue, wired, smartphone, tablet, computer, cord',
+        keywords: 'over, over ear, headphones, lightblue, wired, smartphone, tablet, computers, cord',
     },
     {
         id: uuid(),
@@ -133,7 +135,7 @@ const data = [
         stars: 4,
         text: 'Bluetooth 5.0 Headphones Over-Ear, 60 Hours Playtime Foldable Lightweight Wireless Headphones Hi-Fi Stereo with 6 EQ Modes, Bass Adjustable Headset with Built-in HD Mic, FM, SD/TF for PC/Home',
         img: ervo2,
-        keywords: 'over, over ear, headphones, black, wireless, bluetooth, smartphone, tablet, computer, cord',
+        keywords: 'over, over ear, headphones, black, wireless, bluetooth, smartphone, tablet, computers, cord',
     },
     {
         id: uuid(),
@@ -149,7 +151,7 @@ const data = [
     },
     {
         id: uuid(),
-        name: 'Sony Playstation Portable 2000 (Renewed)',
+        name: 'Sony Playstation Portable 2000',
         price: 199.00,
         sale: 6,
         qty: 150,
@@ -182,6 +184,30 @@ const data = [
         text: 'XBOX Wireless Controller for Xbox 360, 2.4GHz Enhanced Dual Vibration Game Controller with Receiver Remote Gamepad Joypad Joystick for Xbox 360 Slim PS3 and PC Windows 7/8/10',
         img: xbox,
         keywords: 'xbox, gaming, games, gamepad, microsoft, wi-fi, game, controller, wireless, joypad, joystick',
+    },
+    {
+        id: uuid(),
+        name: 'Kody WH-1000XM5 Wireless Headphones',
+        price: 398.00,
+        sale: 30,
+        qty: 50,
+        color: 'Black',
+        stars: 5,
+        text: 'Kody WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones with Auto Noise Canceling Optimizer, Crystal Clear Hands-Free Calling, and Alexa Voice Control, Black',
+        img: kody,
+        keywords: 'headphones, black, on-ear, wired, wireless, smartphone, music, tablet, computers, cord',
+    },
+    {
+        id: uuid(),
+        name: 'Logitech Pro 2.4G Wireless Mouse',
+        price: 18.00,
+        sale: 6,
+        qty: 20,
+        color: 'Black',
+        stars: 3,
+        text: 'Wireless Mouse, Logitech Pro 2.4G Ergonomic Wireless Optical Mouse with USB Nano Receiver for Laptop,PC,Computer,Chromebook,Notebook,6 Buttons,24 Months Battery Life, 2600 DPI, 5 Adjustment Levels',
+        img: pcmouse,
+        keywords: 'mouse, computers, ergonomic, wireless, optical, usb, nano, laptop',
     },
 ]
 
