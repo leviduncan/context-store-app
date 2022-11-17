@@ -40,7 +40,7 @@ export const Products = () => {
             <div className="card-body">
               <h5 className="card-title"><Link to={`/product/${item.id}`} >{item.name}</Link></h5>
               <div className="card-text">{item.text}</div>
-              <Favs />
+              <Favs id={item.id} />
             </div>
           </div>
         ))
