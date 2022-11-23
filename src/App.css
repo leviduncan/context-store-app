@@ -58,9 +58,11 @@ a:hover {
 .card-text {
   font-size: .7em;
   color: #888;
+  height: 30px;
+  overflow-y: hidden;
 }
 
-.card-text::before {
+/* .card-text::before {
   content:'';
   position: absolute;
   z-index: 2;
@@ -70,6 +72,44 @@ a:hover {
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
 
+} */
+
+.card-footer {
+  background-color: #fff;
+  border-top: #fff;
+  /* position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; */
+}
+
+.card-footer .price-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-footer .btn-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: 20px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.card-footer .new-price {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card-footer .price {
+  text-decoration:line-through;
+  color: #aaa;
 }
 
 .categories-section {
@@ -170,6 +210,22 @@ a:hover {
 
 .product .desc {
   margin: 20px 0;
+}
+
+.product .price {
+  display: flex;
+  align-items: baseline;
+}
+
+.product .new-price {
+  font-size: 2em;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.product .old-price {
+  text-decoration: line-through;
+  color: #aaa;
 }
 
 @media (min-width: 768px) {

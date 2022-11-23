@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import AppContext from '../context/store'
 
 export const Product = () => {
-  const { products } = useContext(AppContext)
+  const { products, handleCalc } = useContext(AppContext)
   const { id } = useParams()
   const productId = id
 
@@ -20,9 +20,14 @@ export const Product = () => {
             </div>
             <div className="col-md-6 desc">
               <h2>{item.name}</h2>
-              <h1>${item.price}</h1>
+              <div className="price">
+                <div className="new-price">${handleCalc(item.price,item.sale)}</div>
+                <div className="old-price">${item.price}</div>
+              </div>
               <p>{item.text}</p>
+              <button type="button" className="btn btn-dark">Add to Cart</button>
             </div>
+            
           </div>
         )
       }

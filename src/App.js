@@ -14,8 +14,13 @@ function App() {
   const [products, setProducts] = useState(data)
   const [favs, setFavs] = useState(false)
 
+  const handleCalc = (price, sale) => {
+    const ttl = price - price * (sale / 100)
+    return ttl.toFixed(2)
+  }
+
   return (
-    <AppContext.Provider value={{ cart, setCart, products, setProducts }}>
+    <AppContext.Provider value={{ cart, setCart, products, setProducts, handleCalc }}>
       <FavoriteContext.Provider value={{ favs, setFavs }}>
         <Router>
           <Routes>
