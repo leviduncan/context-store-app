@@ -5,8 +5,18 @@ import Search from '../components/Search'
 import AppContext from '../context/store'
 
 export const Products = () => {
-  const { products, handleCalc } = useContext(AppContext)
+  const { cart, setCart, products, handleCalc } = useContext(AppContext)
   const [search, setSearch] = useState('')
+  const [name, setName] = useState('')
+  const [price, setPrice] = useState('')
+  const [id, setId] = useState('')
+
+  const listOfItems = {
+    id:id,
+    name: name,
+    price: price
+  }
+  const [cartList, setCartList] = useState(listOfItems)
 
   const onSearchChange = (e) => {
     const searchField = e.target.value.toLocaleLowerCase()
@@ -21,7 +31,15 @@ export const Products = () => {
     return item.keywords.toLocaleLowerCase().includes(search)
   })
 
-
+  const addToCart = (id, name, price, sale) => {
+    setId(id)
+    setName(name)
+    setPrice(handleCalc(price, sale))
+    console.log(id, name, price, sale)
+    
+    setCartList({...cartList, name:name})
+    console.log(cartList)
+  }
 
   return (
     <>
@@ -48,7 +66,7 @@ export const Products = () => {
                   <div className="price">${item.price}</div>
                 </div>
                 <div className="btn-area">
-                  <button className="btn btn-dark" type="button">Add to Cart</button>
+                  <button className="btn btn-dark" type="button" onClick={()=>{addToCart(item.id, item.name, item.price, item.sale)}}>Add to Cart</button>
                 </div>
               </div>
             </div>
