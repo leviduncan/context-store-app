@@ -1,22 +1,23 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Basket from '../components/Basket'
 import Categories from '../components/Categories'
 import Search from '../components/Search'
 import AppContext from '../context/store'
 
 export const Products = () => {
-  const { cart, setCart, products, handleCalc } = useContext(AppContext)
+  const { onAdd, products, handleCalc } = useContext(AppContext)
   const [search, setSearch] = useState('')
-  const [name, setName] = useState('')
-  const [price, setPrice] = useState('')
-  const [id, setId] = useState('')
+  // const [name, setName] = useState('')
+  // const [price, setPrice] = useState('')
+  // const [id, setId] = useState('')
 
-  const listOfItems = {
-    id:id,
-    name: name,
-    price: price
-  }
-  const [cartList, setCartList] = useState(listOfItems)
+  // const listOfItems = {
+  //   id:id,
+  //   name: name,
+  //   price: price
+  // }
+  // const [cartList, setCartList] = useState(listOfItems)
 
   const onSearchChange = (e) => {
     const searchField = e.target.value.toLocaleLowerCase()
@@ -31,20 +32,19 @@ export const Products = () => {
     return item.keywords.toLocaleLowerCase().includes(search)
   })
 
-  const addToCart = (id, name, price, sale) => {
-    setId(id)
-    setName(name)
-    setPrice(handleCalc(price, sale))
-    console.log(id, name, price, sale)
+  // const addToCart = (id, name, price, sale) => {
+  //   setId(id)
+  //   setName(name)
+  //   setPrice(handleCalc(price, sale))
+  //   console.log(id, name, price, sale)
     
-    setCartList({...cartList, name:name})
-    console.log(cartList)
-  }
+  //   setCartList({...cartList, name:name})
+  //   console.log(cartList)
+  // }
 
   return (
     <>
       <div className="row">
-        <h1>Products</h1>
         <Search onSearchChange={onSearchChange} />
       </div>
       <div className="categories-section">
@@ -66,13 +66,14 @@ export const Products = () => {
                   <div className="price">${item.price}</div>
                 </div>
                 <div className="btn-area">
-                  <button className="btn btn-dark" type="button" onClick={()=>{addToCart(item.id, item.name, item.price, item.sale)}}>Add to Cart</button>
+                  <button className="btn btn-dark" type="button" onClick={()=>{onAdd(item)}}>Add to Cart</button>
                 </div>
               </div>
             </div>
           ))
         }
       </div>
+      <div className="cart"><Basket /></div>
     </>
   )
 }

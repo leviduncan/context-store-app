@@ -24,6 +24,7 @@ a:hover {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
+  width: 75%;
 }
 
 .card {
@@ -119,6 +120,7 @@ a:hover {
   position: relative;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  width: 80%;
 }
 
 .categories-section .cameras,
@@ -185,6 +187,7 @@ a:hover {
   color: #ccc;
   background: rgb(245, 245, 245);
   border: unset;
+  width: 80%;
 }
 
 .form-control input, .form-control input:focus, .form-control input:active, .form-control input:focus-visible {
@@ -227,6 +230,48 @@ a:hover {
   text-decoration: line-through;
   color: #aaa;
 }
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+button.badge {
+  background-color: #212529;
+  border: none;
+  color: #ffffff;
+  width: 1.5rem;
+  font-weight: 400;
+}
+
+button.remove {
+  background-color: #212529;
+  border: none;
+  color: #ffffff;
+  width: 1.5rem;
+  font-weight: 400;
+}
+
+button.add {
+  background-color: #212529;
+  border: none;
+  color: #ffffff;
+  width: 1.5rem;
+  font-weight: 400;
+}
+
+.cart {
+  border-left: solid 1px #eee;
+  position: fixed;
+  width: 400px;
+  right: 0;
+  padding: 20px;
+  top: 100px;
+  height: 80vh;
+}
+
 
 @media (min-width: 768px) {
   .product .content {

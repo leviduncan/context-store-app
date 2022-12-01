@@ -7,21 +7,52 @@ import { Home } from './pages/Home';
 import { Cart } from './pages/Cart'
 import { Product } from './pages/Product';
 import data from './data'
+import Header from './components/Header';
 
 
 function App() {
-  const [cart, setCart] = useState([])
+  const [cartItems, setCartItems] = useState([])
   const [products, setProducts] = useState(data)
   const [favs, setFavs] = useState(false)
+
+  const onAdd = (products) => {
+    const exist = cartItems.find((items) => items.id === products.id)
+    if (exist) {
+      setCartItems(
+        cartItems.map((items) => 
+          items.id === products.id ? { ...exist, qty: exist.qty + 1} : items
+       )
+        
+      )
+    } else {
+      setCartItems([...cartItems, {...products, qty: 1}])
+    }
+  }
+
+  const onRemove = (products) => {
+    const exist = cartItems.find((items) => items.id === products.id)
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((items) => items.id !== products.id))
+    } else {
+      setCartItems(
+        cartItems.map((items) => 
+          items.id === products.id ? { ...exist, qty: exist.qty - 1 } : items
+        )
+      )
+    }
+  }
 
   const handleCalc = (price, sale) => {
     const ttl = price - price * (sale / 100)
     return ttl.toFixed(2)
   }
 
+  const counterCartItems = cartItems.length
+
   return (
-    <AppContext.Provider value={{ cart, setCart, products, setProducts, handleCalc }}>
+    <AppContext.Provider value={{ counterCartItems, onAdd, onRemove, cartItems, setCartItems, products, setProducts, handleCalc }}>
       <FavoriteContext.Provider value={{ favs, setFavs }}>
+        <Header />
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
