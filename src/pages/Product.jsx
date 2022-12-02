@@ -31,7 +31,6 @@ export const Product = () => {
           </div>
         )
       }
-      <div className="cart">CART</div>
     </div>
   )
 }

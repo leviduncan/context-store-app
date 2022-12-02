@@ -1,6 +1,10 @@
 .App {
 }
 
+.logo {
+  width: 80px;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -17,14 +21,13 @@ a:hover {
 
 .products-section {
   height: 100vh;
-  padding: 20px;
 }
 
 .prod-grid {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   flex-wrap: wrap;
-  width: 75%;
+  width: 100%;
 }
 
 .card {
@@ -35,6 +38,7 @@ a:hover {
   box-shadow: 0 0 16px rgba(61, 126, 255, 0.224);
   margin: 10px;
   overflow: hidden;
+  width: 100%;
 }
 
 .card .favs {
@@ -63,17 +67,6 @@ a:hover {
   overflow-y: hidden;
 }
 
-/* .card-text::before {
-  content:'';
-  position: absolute;
-  z-index: 2;
-  height: 100px;
-  width: 100%;
-  left: 0px;
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-
-} */
 
 .card-footer {
   background-color: #fff;
@@ -120,7 +113,8 @@ a:hover {
   position: relative;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  width: 80%;
+  width: 100%;
+  justify-content: center;
 }
 
 .categories-section .cameras,
@@ -185,9 +179,10 @@ a:hover {
 .search {
   margin: 16px;
   color: #ccc;
-  background: rgb(245, 245, 245);
-  border: unset;
-  width: 80%;
+  background: rgb(255, 255, 255);
+  border: solid 1px #333;
+  border-radius: 20px;
+  width: 70%;
 }
 
 .form-control input, .form-control input:focus, .form-control input:active, .form-control input:focus-visible {
@@ -232,18 +227,29 @@ a:hover {
 }
 
 .head {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.145);
 }
 
 button.badge {
-  background-color: #212529;
+  background: unset;
   border: none;
-  color: #ffffff;
+  color: #212529;
   width: 1.5rem;
+  height: 1.5rem;
   font-weight: 400;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 40px;
+  right: 32px;
+  z-index: 2;
 }
 
 button.remove {
@@ -264,7 +270,7 @@ button.add {
 
 .cart {
   border-left: solid 1px #eee;
-  position: fixed;
+  position: absolute;
   width: 400px;
   right: 0;
   padding: 20px;
@@ -272,6 +278,50 @@ button.add {
   height: 80vh;
 }
 
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20vw;
+  height: 100vh;
+  background: green;
+  z-index: 300;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.767);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+}
+
+.basket-wrapper {
+  padding: 10px;
+}
+.basket-icon {
+  font-size: 1.7em;
+}
+
+.carousel-inner {
+  height: 60vw;
+}
+
+.carousel-item {
+  top: 0px;
+}
 
 @media (min-width: 768px) {
   .product .content {
@@ -281,4 +331,40 @@ button.add {
   .product .desc {
     margin: 20px;
   }
+
+  .card {
+    width: 47%;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    width: 31%;
+  }
+  .carousel-inner {
+    height: 50vw;
+  }
+  
+  .carousel-item {
+    top: -120px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1600px;
+}
+
+.carousel-inner {
+  height: 30vw;
+}
+
+.carousel-item {
+  top: -330px;
+}
+
+.card {
+  width: 23%;
+}
 }

@@ -14,6 +14,7 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [products, setProducts] = useState(data)
   const [favs, setFavs] = useState(false)
+  const [search, setSearch] = useState('')
 
   const onAdd = (products) => {
     const exist = cartItems.find((items) => items.id === products.id)
@@ -49,8 +50,13 @@ function App() {
 
   const counterCartItems = cartItems.length
 
+  const onSearchChange = (e) => {
+    const searchField = e.target.value.toLocaleLowerCase()
+    setSearch(searchField)
+  }
+
   return (
-    <AppContext.Provider value={{ counterCartItems, onAdd, onRemove, cartItems, setCartItems, products, setProducts, handleCalc }}>
+    <AppContext.Provider value={{ onSearchChange, counterCartItems, onAdd, onRemove, cartItems, setCartItems, products, setProducts, handleCalc, search, setSearch }}>
       <FavoriteContext.Provider value={{ favs, setFavs }}>
         <Header />
         <Router>
