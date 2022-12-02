@@ -35,10 +35,14 @@ a:hover {
   border-radius: 16px;
   border: unset;
   background: #fff;
-  box-shadow: 0 0 16px rgba(61, 126, 255, 0.224);
+  box-shadow: 0 0 5px rgba(61, 126, 255, 0.315);
   margin: 10px;
   overflow: hidden;
   width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 0 16px rgba(61, 126, 255, 0.315);
 }
 
 .card .favs {
@@ -71,11 +75,6 @@ a:hover {
 .card-footer {
   background-color: #fff;
   border-top: #fff;
-  /* position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100; */
 }
 
 .card-footer .price-group {
@@ -145,7 +144,7 @@ a:hover {
 .categories-section .speakers:hover,
 .categories-section .watches:hover,
 .categories-section .all:hover   {
-  box-shadow: 0 0 16px rgba(61, 126, 255, 0.224);
+  box-shadow: 0 0 16px rgba(61, 126, 255, 0.35);
   margin: 7px 10px 13px;
 }
 
@@ -204,6 +203,7 @@ a:hover {
 .product .content {
   display: flex;
   flex-direction: column;
+  margin-top: 77px;
 }
 
 .product .desc {
@@ -241,10 +241,10 @@ a:hover {
 button.badge {
   background: unset;
   border: none;
-  color: #212529;
+  color: #0072e4;
   width: 1.5rem;
   height: 1.5rem;
-  font-weight: 400;
+  font-weight: 600;
   border-radius: 20px;
   position: absolute;
   bottom: 40px;

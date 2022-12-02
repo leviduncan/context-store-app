@@ -15,7 +15,7 @@ export const Product = () => {
       {
         result.map((item) =>
           <div key={item.id} className="content">
-            <div className="col-md-4">
+            <div className="col-md-6">
               <img className="img-main" src={item.img} alt={item.name} />
             </div>
             <div className="col-md-4 desc">
