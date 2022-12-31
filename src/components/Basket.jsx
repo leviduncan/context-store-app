@@ -1,31 +1,48 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import AppContext from '../context/store'
 
 function Basket() {
-    const { onAdd, onRemove, cartItems } = useContext(AppContext)
-    const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+    const { onAdd, onRemove, cartItems, handleCalc } = useContext(AppContext)
+    const newPrice = (currentPrice, salePrice) => {
+        return handleCalc(currentPrice, salePrice)
+    }
+    const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price - c.price * (c.sale / 100), 0);
     const taxPrice = itemsPrice * 0.14;
     const shippingPrice = itemsPrice > 2000 ? 0 : 20;
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
+
+    // const ttl = price - price * (sale / 100)
     return (
         <>
             <div>
                 {cartItems.length === 0 && <div>Cart is empty</div>}
                 {cartItems.map((item) => (
-                    <div key={item.id} className="row">
-                        <div className="col-6">{item.name}</div>
-                        <div className="col-6">
-                            <button onClick={() => onRemove(item)} className="remove">
-                                -
-                            </button>{' '}
-                            <button onClick={() => onAdd(item)} className="add">
-                                +
-                            </button>
+                    <div key={item.id} className="cart-item">
+                        <div>
+                            <Link to={`/product/${item.id}`}>
+                                <img className="thumb" src={item.img} alt={item.name} />
+                            </Link>
+                        </div>
+                        <div className="name">
+                            <Link to={`/product/${item.id}`}>{item.name}</Link>
+                            
+                            <div className="text">{item.text}</div>
+                        </div>
+                        <div className="right">
+                            <div className="price"><strong>${newPrice(item.price, item.sale)}</strong></div>
+                            <div className="">
+                                <button onClick={() => onRemove(item)} className="remove">
+                                    -
+                                </button>
+                                <span className="qty">{item.qty}</span>
+                                <button onClick={() => onAdd(item)} className="add">
+                                    +
+                                </button>
+                            </div>
                         </div>
 
-                        <div className="col-6 text-right">
-                            {item.qty} x <strong>${item.price.toFixed(2)}</strong>
-                        </div>
+
                     </div>
                 ))}
 
@@ -56,9 +73,9 @@ function Basket() {
                             </div>
                         </div>
                         <hr />
-                        <div className="row">
-                            <button className="btn btn-primary" onClick={() => alert('Implement Checkout!')}>
-                                Checkout
+                        <div className="row basket-footer">
+                            <button className="btn btn-primary btn-lg" onClick={() => alert('Implement Checkout!')}>
+                                Proceed to Checkout
                             </button>
                         </div>
                     </>

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import AppContext from './context/store';
-import FavoriteContext from './context/FavoriteContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Home } from './pages/Home';
@@ -56,18 +55,18 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={{ onSearchChange, counterCartItems, onAdd, onRemove, cartItems, setCartItems, products, setProducts, handleCalc, search, setSearch }}>
-      <FavoriteContext.Provider value={{ favs, setFavs }}>
-        <Header />
+    <div className="App">
+      <AppContext.Provider value={{ onSearchChange, counterCartItems, onAdd, onRemove, cartItems, setCartItems, products, setProducts, handleCalc, search, setSearch }}>
         <Router>
+          <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/product/:id" element={<Product />} />
           </Routes>
         </Router>
-      </FavoriteContext.Provider>
     </AppContext.Provider>
+    </div>
 
 
   );

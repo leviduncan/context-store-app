@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <>
       <Hero />
-      <div className="container">
+      <div className="container-fluid">
         <div className="products-section">
           <Products />
         </div>
