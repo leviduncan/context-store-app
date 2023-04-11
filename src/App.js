@@ -12,7 +12,6 @@ import Header from './components/Header';
 function App() {
   const [cartItems, setCartItems] = useState([])
   const [products, setProducts] = useState(data)
-  const [favs, setFavs] = useState(false)
   const [search, setSearch] = useState('')
 
   const onAdd = (products) => {
