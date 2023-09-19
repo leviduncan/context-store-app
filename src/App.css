@@ -22,6 +22,7 @@ a:hover {
 
 .products-section {
   height: 100vh;
+  background: #fff;
 }
 
 .prod-grid {
@@ -128,7 +129,7 @@ a:hover {
 .category-grid {
   display: grid;
   grid-template-rows: 200px 200px 200px;
-  grid-template-columns: 310px 600px 310px;
+  grid-template-columns: 310px 300px 300px 310px;
   gap: 20px;
   margin-top: 20px;
 }
@@ -182,20 +183,21 @@ a:hover {
 
 .categories-section .computers {
   background-image: url('./assets/laptop-v1.jpg');
-  grid-area: 1 / 2 / 4 / 2;
+  grid-area: 1 / 2 / 3 / 4;
 }
 .categories-section .earbuds {
   background-image: url('./assets/loot-airbuds.jpg');
 }
 .categories-section .gaming {
   background-image: url('./assets/xbox-game-controller-v1.jpg');
-  grid-area: 3 / 1 / 4 / 2;
+  grid-area: 3 / 1 / 3 / 3;
 }
 .categories-section .headphones {
   background-image: url('./assets/ervo-rocks-headphones-v1.jpg');
 }
 .categories-section .speakers {
   background-image: url('./assets/harmon-kardon-speakers.jpg');
+  grid-area: 3 / 3 / 4 / 5;
 }
 .categories-section .watches {
   background-image: url('./assets/nayris-android watch.jpg');

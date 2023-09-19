@@ -33,7 +33,6 @@ console.log(productId)
                 <p>{item.keywords}</p>
                 <button className="btn btn-dark" type="button" onClick={() => { onAdd(item) }}>Add to Cart</button>
               </div>
-              HOLLA!
             </div>
           )
         }
