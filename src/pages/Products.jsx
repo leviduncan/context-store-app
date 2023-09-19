@@ -18,10 +18,10 @@ export const Products = () => {
      
   return (
     <>
-      <div className="categories-section">
+      <div className="categories-section container mx-auto">
         <Categories categorySearch={categorySearch} />
       </div>
-      <div className="prod-grid">
+      <div className="prod-grid container">
         {
           filteredProducts.map((item) => (
             <div key={item.id} className="card">
